@@ -92,8 +92,8 @@
       {
         "question": "Ce va afișa următorul cod JavaScript?\n\n```\nconsole.log(2 + '2' == '2' + 2);\n```",
         "answers": [
-          {"text": "true", "correct": false},
-          {"text": "false", "correct": true},
+          {"text": "true", "correct": true},
+          {"text": "false", "correct": false},
           {"text": "Eroare", "correct": false}
         ],
         "explanation": "Expresia '2 + '2' == '2' + 2' este evaluată ca '22 == '22', care este adevărată."
