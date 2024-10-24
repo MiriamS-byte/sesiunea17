@@ -13,10 +13,21 @@ class Quiz {
         this.answerButtons.innerHTML = "";
         for(const answer of question.answers){
             const li = document.createElement("li");
-            // li.innerHTML = `<button class="btn">${option.text}</button>`;
             const btn = document.createElement("button");
             btn.className = "btn";
             btn.textContent = answer.text;
+            btn.addEventListener(`click`, () => {
+                if(answer.correct){
+                    btn.classList.add("correct");
+                    this.feedback.textContent = question.explanation;
+                    this.feedback.className = "text-correct";
+                    this.nextButton.classList.remove("hide");
+                }else {
+                    btn.classList.add("wrong");
+                    this.feedback.textContent = "Raspuns gresit. Te rog sa incerci din nou";
+                    this.feedback.className = "text-wrong";
+                }
+            })
             li.appendChild(btn);
             this.answerButtons.appendChild(li);
         }
